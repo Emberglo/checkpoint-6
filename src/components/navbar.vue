@@ -1,4 +1,30 @@
 <template>
+  <div class="sidebar col-2">
+    <div class="header font-weight-bold">
+      Bright<br>
+      Skies<br>
+      Above
+    </div>
+    <div class="links">
+      Home
+      Profile
+      Posts
+      Authors
+      Contact
+    </div>
+    <div>
+      <div>
+        Travel Blog By Ryan Carpenter
+      </div>
+      <hr>
+      facebook icon
+      twitter icon
+      instagram icon
+    </div>
+  </div>
+</template>
+
+<template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
