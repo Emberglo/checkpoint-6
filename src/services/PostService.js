@@ -12,6 +12,16 @@ class PostService {
       console.error(error)
     }
   }
+
+  async getActivePost(id) {
+    try {
+      const res = await api.get('api/blogs/' + id)
+      console.log(res)
+      AppState.activePost = res.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
 
 export const postService = new PostService()

@@ -9,6 +9,7 @@
         </div>
       </div>
     </router-link>
+    <hr>
     <div id="navbarText" class="mr-2">
       <ul class="navbar-nav mr-auto">
       </ul>
@@ -23,7 +24,7 @@
 
         <div class="dropdown" v-else>
           <div
-            class="btn btn-light dropdown-toggle"
+            class="btn btn-light dropdown-toggle pl-0"
             @click="state.dropOpen = !state.dropOpen"
           >
             <img
@@ -54,27 +55,29 @@
         </div>
       </span>
     </div>
+    <hr>
     <div class="links">
-      <router-link :to="{ name: 'Home' }" class="nav-link">
+      <router-link :to="{ name: 'Home' }" class="nav-link pl-0">
         Home
       </router-link>
-      <router-link :to="{ name: 'Profile' }" class="nav-link">
+      <router-link :to="{ name: 'Profile' }" class="nav-link pl-0">
         Profile
       </router-link>
-      <router-link :to="{ name: 'Posts' }" class="nav-link">
+      <router-link :to="{ name: 'Posts' }" class="nav-link pl-0">
         Posts
       </router-link>
-      Authors
+      Authors<br>
       Contact
     </div>
+    <hr>
     <div>
-      <div>
+      <div class="rotate d-block">
         Travel Blog By Ryan Carpenter
       </div>
-      <hr>
-      facebook icon
+      <!-- <hr class="rotate"> -->
+      <!-- facebook icon
       twitter icon
-      instagram icon
+      instagram icon -->
     </div>
   </div>
 </template>
@@ -196,5 +199,9 @@ export default {
 }
 a:hover {
   text-decoration: none;
+}
+.rotate{
+  transform: rotate(-90deg);
+  width: 15em;
 }
 </style>

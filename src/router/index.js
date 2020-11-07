@@ -5,6 +5,8 @@ import Home from '../pages/Home.vue'
 import Profile from '../pages/Profile.vue'
 // @ts-ignore
 import Posts from '../pages/Posts.vue'
+// @ts-ignore
+import ActivePost from '../pages/ActivePost.vue'
 import { Auth0Provider } from '@bcwdev/auth0provider-client'
 
 const routes = [
@@ -23,6 +25,11 @@ const routes = [
     path: '/posts',
     name: 'Posts',
     component: Posts
+  },
+  {
+    path: '/activepost',
+    name: 'ActivePost',
+    component: ActivePost
   }
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="Posts col-9 offset-1 mt-3" v-if="posts">
+  <div class="Posts col-9 ml-5 mt-3" v-if="posts">
     <h5>Latest Posts</h5>
     <hr>
     <div class="row">
