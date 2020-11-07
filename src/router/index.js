@@ -3,6 +3,8 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 // @ts-ignore
 import Profile from '../pages/Profile.vue'
+// @ts-ignore
+import Posts from '../pages/Posts.vue'
 import { Auth0Provider } from '@bcwdev/auth0provider-client'
 
 const routes = [
@@ -16,6 +18,11 @@ const routes = [
     name: 'Profile',
     component: Profile,
     beforeEnter: Auth0Provider.authGuard
+  },
+  {
+    path: '/posts',
+    name: 'Posts',
+    component: Posts
   }
 ]
 

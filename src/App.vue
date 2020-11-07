@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="row">
     <navbar />
     <router-view />
   </div>
@@ -9,6 +9,7 @@
 import Navbar from '@/components/navbar'
 import { computed } from 'vue'
 import { AppState } from './AppState'
+
 export default {
   name: 'App',
   setup() {

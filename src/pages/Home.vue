@@ -1,13 +1,9 @@
 <template>
-  <div class="home col-10">
+  <div class="home col-9 offset-1 text-center">
     <h1>Welcome To Bright Skies Above</h1>
     <h3>The newest platform for travel and adventure bloggers</h3>
-    <div id="recentDisplay" class="bg-light border-rounded shadow p-5 m-3 text-center w-50 w-25-lg">
-      <div>
-        <h5>Article Title</h5>
-        <p>Author</p>
-        <button class="btn btn-info">Read</button>
-      </div>
+    <div id="recentDisplay" class="bg-light border-rounded shadow p-5 m-3 mt-5 text-center w-25 row">
+      <PostCard />
     </div>
   </div>
 </template>

@@ -1,14 +1,69 @@
 <template>
-  <div class="sidebar col-2">
-    <div class="header font-weight-bold">
-      Bright<br>
-      Skies<br>
-      Above
+  <div class="sidebar col-2 d-flex flex-column">
+    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
+      <div class="d-flex flex-column align-items-center">
+        <div class="header font-weight-bold">
+          Bright<br>
+          Skies<br>
+          Above
+        </div>
+      </div>
+    </router-link>
+    <div id="navbarText" class="mr-2">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <span class="navbar-text">
+        <button
+          class="btn btn-success"
+          @click="login"
+          v-if="!user.isAuthenticated"
+        >
+          Login
+        </button>
+
+        <div class="dropdown" v-else>
+          <div
+            class="btn btn-light dropdown-toggle"
+            @click="state.dropOpen = !state.dropOpen"
+          >
+            <img
+              :src="user.picture"
+              alt="user photo"
+              height="40"
+              class="rounded"
+            />
+            <span class="mx-3">{{ user.name }}</span>
+          </div>
+          <div
+            class="dropdown-menu p-0 list-group w-100"
+            :class="{ show: state.dropOpen }"
+            @click="state.dropOpen = false"
+          >
+            <router-link :to="{ name: 'Profile' }">
+              <div class="list-group-item list-group-item-action hoverable">
+                Profile
+              </div>
+            </router-link>
+            <div
+              class="list-group-item list-group-item-action hoverable"
+              @click="logout"
+            >
+              logout
+            </div>
+          </div>
+        </div>
+      </span>
     </div>
     <div class="links">
-      Home
-      Profile
-      Posts
+      <router-link :to="{ name: 'Home' }" class="nav-link">
+        Home
+      </router-link>
+      <router-link :to="{ name: 'Profile' }" class="nav-link">
+        Profile
+      </router-link>
+      <router-link :to="{ name: 'Posts' }" class="nav-link">
+        Posts
+      </router-link>
       Authors
       Contact
     </div>
@@ -24,7 +79,7 @@
   </div>
 </template>
 
-<template>
+<!-- <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
@@ -100,7 +155,7 @@
       </span>
     </div>
   </nav>
-</template>
+</template> -->
 
 <script>
 import { AuthService } from '../services/AuthService'
