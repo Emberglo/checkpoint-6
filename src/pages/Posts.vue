@@ -1,9 +1,9 @@
 <template>
-  <div class="Posts col-9 offset-1" v-if="posts">
+  <div class="Posts col-9 offset-1 mt-3" v-if="posts">
     <h5>Latest Posts</h5>
     <hr>
     <div class="row">
-      <PostCard v-for="post in posts" :post-prop="post" :key="post.id" />
+      <PostCard v-for="post in posts" :post-props="post" :key="post.id" />
     </div>
   </div>
 </template>
@@ -16,13 +16,15 @@ import PostCard from '../components/PostCard'
 
 export default {
   name: 'Posts',
+  components: { PostCard },
   setup() {
-    onMounted(() => postService.getAllPosts())
+    onMounted(() => {
+      postService.getAllPosts()
+    })
     return {
       posts: computed(() => AppState.posts)
     }
-  },
-  components: { PostCard }
+  }
 }
 </script>
 
