@@ -1,12 +1,10 @@
 <template>
-  <div class="sidebar col-2 d-flex flex-column">
+  <div class="sidebar col-2 d-flex flex-column mr-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <div class="header font-weight-bold">
-          Bright<br>
-          Skies<br>
-          Above
-        </div>
+      <div class="header font-weight-bold">
+        Bright<br>
+        Skies<br>
+        Above
       </div>
     </router-link>
     <hr>
@@ -70,95 +68,13 @@
       Contact
     </div>
     <hr>
-    <div>
-      <div class="rotate d-block">
+    <div class="place rotate">
+      <p>
         Travel Blog By Ryan Carpenter
-      </div>
-      <!-- <hr class="rotate"> -->
-      <!-- facebook icon
-      twitter icon
-      instagram icon -->
+      </p>
     </div>
   </div>
 </template>
-
-<!-- <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img
-          alt="Vue logo"
-          src="../assets/logo.png"
-          width="25"
-        />
-      </div>
-      <div class="text-light text-shadow">
-        <h3>ue Template</h3>
-      </div>
-    </router-link>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon" />
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link :to="{ name: 'Home' }" class="nav-link">
-            Home
-          </router-link>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        <button
-          class="btn btn-success"
-          @click="login"
-          v-if="!user.isAuthenticated"
-        >
-          Login
-        </button>
-
-        <div class="dropdown" v-else>
-          <div
-            class="btn btn-light dropdown-toggle"
-            @click="state.dropOpen = !state.dropOpen"
-          >
-            <img
-              :src="user.picture"
-              alt="user photo"
-              height="40"
-              class="rounded"
-            />
-            <span class="mx-3">{{ user.name }}</span>
-          </div>
-          <div
-            class="dropdown-menu p-0 list-group w-100"
-            :class="{ show: state.dropOpen }"
-            @click="state.dropOpen = false"
-          >
-            <router-link :to="{ name: 'Profile' }">
-              <div class="list-group-item list-group-item-action hoverable">
-                Profile
-              </div>
-            </router-link>
-            <div
-              class="list-group-item list-group-item-action hoverable"
-              @click="logout"
-            >
-              logout
-            </div>
-          </div>
-        </div>
-      </span>
-    </div>
-  </nav>
-</template> -->
 
 <script>
 import { AuthService } from '../services/AuthService'
@@ -200,8 +116,17 @@ export default {
 a:hover {
   text-decoration: none;
 }
-.rotate{
+.sidebar {
+  height: 100vh;
+}
+.rotate {
   transform: rotate(-90deg);
   width: 15em;
+}
+.place {
+  height: 100%;
+  margin-top: 2em;
+  align-self: start;
+  text-align: left;
 }
 </style>

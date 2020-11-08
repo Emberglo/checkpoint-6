@@ -26,4 +26,8 @@ export default {
 @import "./assets/_variables.scss";
 @import "bootstrap";
 @import "./assets/_overrides.scss";
+
+#app {
+  height: 100vh;
+}
 </style>

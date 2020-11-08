@@ -1,8 +1,8 @@
 <template>
   <div class="PostCard col-3 m-3 p-3 d-flex flex-column bg-light border-rounded shadow">
     <h5> {{ post.title }} </h5>
-    <p> {{ post.creator.name }} </p>
-    <router-link :to="{name: 'ActivePost', params: {id: post.id}}" class="btn btn-info mt-2 justify-self-center">
+    <p> {{ post.creatorEmail }} </p>
+    <router-link :to="{name: 'ActivePost', params: {id: postProps.id}}" class="btn btn-secondary mt-2 justify-self-center">
       Read
     </router-link>
   </div>
@@ -23,7 +23,7 @@ export default {
     return {
       post: computed(() => props.postProps),
       getActivePost(id) {
-        postService.getActivePokemon(id)
+        postService.getActivePost(id)
       }
     }
   },

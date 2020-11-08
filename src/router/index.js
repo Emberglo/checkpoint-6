@@ -16,18 +16,18 @@ const routes = [
     component: Home
   },
   {
-    path: '/profile',
+    path: '/api/profile',
     name: 'Profile',
     component: Profile,
     beforeEnter: Auth0Provider.authGuard
   },
   {
-    path: '/posts',
+    path: '/api/blogs',
     name: 'Posts',
     component: Posts
   },
   {
-    path: '/activepost',
+    path: '/api/blogs/:id',
     name: 'ActivePost',
     component: ActivePost
   }
