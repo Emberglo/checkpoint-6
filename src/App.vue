@@ -28,6 +28,7 @@ export default {
 @import "./assets/_overrides.scss";
 
 #app {
+  font-family: 'Roboto', sans-serif;
   height: 100%;
   background-color: #D0D0D0;
 }
