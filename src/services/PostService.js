@@ -84,6 +84,7 @@ class PostService {
       if (window.confirm('Are you sure?')) {
         await api.delete('api/comments/' + id)
         router.push({ name: 'Post', params: { id: id } })
+        this.getComments()
       }
     } catch (error) {
       console.error(error)
