@@ -90,7 +90,7 @@ export default {
     const state = reactive({
       newPost: {},
       newComment: {
-        blog: AppState.activePost.id
+        blog: computed(() => AppState.activePost.id)
       },
       editPost: {}
     })
