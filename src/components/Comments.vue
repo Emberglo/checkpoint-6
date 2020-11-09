@@ -33,7 +33,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form @submit.prevent="editComment(comment.id)">
+            <form @submit.prevent="editComments(comment.id)">
               <div class="form-group">
                 <input type="text" class="form-control" id="title" placeholder="Comment" v-model="state.editComment.body">
               </div>

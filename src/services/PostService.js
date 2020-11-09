@@ -16,9 +16,9 @@ class PostService {
   async getActivePost(id) {
     try {
       const res = await api.get('api/blogs/' + id)
-      console.log('profile', AppState.profile)
-      console.log('user', AppState.user)
-      console.log('active post', res.data)
+      // console.log('profile', AppState.profile)
+      // console.log('user', AppState.user)
+      // console.log('active post', res.data)
       AppState.activePost = res.data
       router.push({ name: 'ActivePost', params: { id: id } })
     } catch (error) {
@@ -38,7 +38,7 @@ class PostService {
   async createPost(newPost) {
     try {
       await api.post('api/blogs', newPost)
-      router.push({ name: 'ActivePost', params: { id: newPost.id } })
+      // router.push({ name: 'ActivePost', params: { id: newPost.id } })
     } catch (error) {
       console.error(error)
     }
@@ -85,6 +85,7 @@ class PostService {
   async editComments(id, editComment) {
     try {
       await api.put('api/comments/' + id, editComment)
+      console.log(id)
       router.push({ name: 'ActivePost', params: { id: editComment.id } })
     } catch (error) {
       console.error(error)
