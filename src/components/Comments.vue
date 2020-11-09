@@ -33,7 +33,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form @submit.prevent="editComments(comment.id)">
+            <form @submit.prevent="editComments(comment.blog.id)">
               <div class="form-group">
                 <input type="text" class="form-control" id="title" placeholder="Comment" v-model="state.editComment.body">
               </div>
@@ -68,8 +68,8 @@ export default {
       getComments() {
         postService.getComments()
       },
-      editComment(id) {
-        postService.editComment(id, state.editComment)
+      editComments() {
+        postService.editComments(props.commentProps.id, state.editComment)
       },
       deleteComment(id) {
         postService.deleteComment(id)

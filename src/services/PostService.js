@@ -84,9 +84,10 @@ class PostService {
 
   async editComments(id, editComment) {
     try {
-      await api.put('api/comments/' + id, editComment)
+      const res = await api.put('api/comments/' + id, editComment)
       console.log(id)
-      router.push({ name: 'ActivePost', params: { id: editComment.id } })
+      AppState.comments = res.data
+      // router.push({ name: 'ActivePost', params: { id: editComment.id } })
     } catch (error) {
       console.error(error)
     }
