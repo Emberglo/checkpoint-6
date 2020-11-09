@@ -16,6 +16,9 @@ class PostService {
   async getActivePost(id) {
     try {
       const res = await api.get('api/blogs/' + id)
+      console.log('profile', AppState.profile)
+      console.log('user', AppState.user)
+      console.log('active post', res.data)
       AppState.activePost = res.data
       router.push({ name: 'ActivePost', params: { id: id } })
     } catch (error) {

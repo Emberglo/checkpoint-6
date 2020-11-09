@@ -1,5 +1,5 @@
 <template>
-  <div class="ActivePost col-8 mt-3 mr-3 d-flex flex-column bg-light border-rounded shadow" v-if="activePost.title">
+  <div class="ActivePost col-9 p-5 mr-5 w-75 d-flex flex-column bg-light border-rounded shadow" v-if="activePost.title">
     <div class="border-bottom">
       <h2> {{ activePost.title }} </h2>
       <p class="font-weight-bold"> {{ activePost.creator.name }} </p>
@@ -123,7 +123,4 @@ export default {
 </script>
 
 <style scoped>
-  .ActivePost {
-    width: 100%;
-  }
 </style>

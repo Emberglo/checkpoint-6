@@ -1,5 +1,5 @@
 <template>
-  <div class="about col-8 mt-5 p-4 d-flex flex-column text-center" v-if="profile.name">
+  <div class="about col-9 mt-5 mr-5 p-4 d-flex flex-column text-center" v-if="profile.name">
     <h1>Welcome {{ profile.name }}</h1>
     <img class="rounded align-self-center my-2" :src="profile.picture" alt="" />
     <p class="border-bottom pb-3">{{ profile.email }}</p>
@@ -32,7 +32,7 @@
     </div>
     <div class="border-bottom p-3 row">
       <h3 class="col-12"> Posts </h3>
-      <div class="row">
+      <div class="row justify-content-center">
         <PostCard v-for="post in posts" :post-props="post" :key="post.id" />
       </div>
     </div>

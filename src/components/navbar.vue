@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar col-3 d-flex flex-column">
+  <div class="sidebar col-2 pr-5 d-flex flex-column">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="header font-weight-bold">
         Bright<br>
