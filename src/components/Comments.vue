@@ -1,5 +1,5 @@
 <template>
-  <div class="Comments col-12 m-3 p-3 d-flex justify-content-between bg-light border-rounded shadow">
+  <div class="Comments col-10 offset-1 mr-5 my-3 p-3 d-flex justify-content-between bg-light border-rounded shadow">
     <div>
       <p> {{comment.body}} </p>
       <div class="border-top mt-4">
@@ -80,6 +80,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
 </style>

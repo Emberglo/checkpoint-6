@@ -1,5 +1,5 @@
 <template>
-  <div class="ActivePost col-8 mt-3 p-4 d-flex flex-column bg-light border-rounded shadow" v-if="activePost.title">
+  <div class="ActivePost col-8 mt-3 mr-3 d-flex flex-column bg-light border-rounded shadow" v-if="activePost.title">
     <div class="border-bottom">
       <h2> {{ activePost.title }} </h2>
       <p class="font-weight-bold"> {{ activePost.creator.name }} </p>
@@ -123,9 +123,7 @@ export default {
 </script>
 
 <style scoped>
-  /* hr {
-    height: 1px;
-    background-color: #917e76;
-    border: none;
-  } */
+  .ActivePost {
+    width: 100%;
+  }
 </style>
