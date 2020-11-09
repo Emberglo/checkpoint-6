@@ -1,5 +1,5 @@
 <template>
-  <div class="ActivePost col-9 ml-5 mt-3 p-4 d-flex flex-column bg-light border-rounded shadow" v-if="activePost.title">
+  <div class="ActivePost col-8 mt-3 p-4 d-flex flex-column bg-light border-rounded shadow" v-if="activePost.title">
     <div class="border-bottom">
       <h2> {{ activePost.title }} </h2>
       <p class="font-weight-bold"> {{ activePost.creator.name }} </p>
@@ -89,7 +89,9 @@ export default {
   setup() {
     const state = reactive({
       newPost: {},
-      newComment: {},
+      newComment: {
+        blog: AppState.activePost.id
+      },
       editPost: {}
     })
     const route = useRoute()

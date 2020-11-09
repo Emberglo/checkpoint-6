@@ -64,6 +64,7 @@ class PostService {
   async createComment(newComment) {
     try {
       await api.post('api/comments', newComment)
+      this.getComments()
     } catch (error) {
       console.error(error)
     }

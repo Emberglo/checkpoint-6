@@ -1,5 +1,5 @@
 <template>
-  <div class="about col-9 ml-5 mt-3 p-4 d-flex flex-column text-center" v-if="profile.name">
+  <div class="about col-8 mt-3 p-4 d-flex flex-column text-center" v-if="profile.name">
     <h1>Welcome {{ profile.name }}</h1>
     <img class="rounded align-self-center my-2" :src="profile.picture" alt="" />
     <p class="border-bottom pb-3">{{ profile.email }}</p>

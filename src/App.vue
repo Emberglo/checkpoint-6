@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="row">
+  <div id="app" class="row justify-content-between">
     <navbar />
     <router-view />
   </div>
@@ -28,6 +28,7 @@ export default {
 @import "./assets/_overrides.scss";
 
 #app {
-  height: 100vh;
+  height: 100%;
+  background-color: #D0D0D0;
 }
 </style>

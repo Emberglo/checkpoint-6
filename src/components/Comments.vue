@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { computed,reactive } from 'vue'
+import { computed, reactive } from 'vue'
 import { postService } from '../services/PostService'
 import { AppState } from '../AppState'
 
