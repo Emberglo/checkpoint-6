@@ -33,11 +33,14 @@
     <div class="border-bottom p-3 row">
       <h3 class="col-12"> Posts </h3>
       <div class="row justify-content-center">
-        <PostCard v-for="post in posts" :post-props="post" :key="post.id" />
+        <PostCard v-for="post in userPosts" :post-props="post" :key="post.id" />
       </div>
     </div>
     <div class="border-bottom p-3">
       <h3> Comments </h3>
+      <div class="row" v-if="userComments">
+        <Comments v-for="comment in userComments" :comment-props="comment" :key="comment.id" />
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +51,8 @@ import { AppState } from '../AppState'
 import { profileService } from '../services/ProfileService'
 import PostCard from '../components/PostCard'
 import { postService } from '../services/PostService'
+import Comments from '../components/Comments'
+import { useRoute } from 'vue-router'
 
 export default {
   name: 'Profile',
@@ -55,9 +60,11 @@ export default {
     const state = reactive({
       newPost: {}
     })
+    const route = useRoute()
     onMounted(() => {
       profileService.getProfile()
-      postService.getAllPosts()
+      postService.getProfilePosts(route.params.id)
+      postService.getProfileComments(route.params.id)
     })
     return {
       state,
@@ -65,13 +72,17 @@ export default {
       activePost: computed(() => AppState.activePost),
       posts: computed(() => AppState.posts),
       user: computed(() => AppState.user),
+      comments: computed(() => AppState.comments),
+      userComments: computed(() => AppState.userComments),
+      userPosts: computed(() => AppState.userPosts),
       createPost() {
         postService.createPost(state.newPost)
       }
     }
   },
   components: {
-    PostCard
+    PostCard,
+    Comments
   }
 }
 </script>

@@ -26,6 +26,15 @@ class PostService {
     }
   }
 
+  async getProfilePosts(id) {
+    try {
+      const res = await api.get('api/profile/blogs')
+      AppState.userPosts = res.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   async createPost(newPost) {
     try {
       await api.post('api/blogs', newPost)
@@ -89,6 +98,15 @@ class PostService {
         router.push({ name: 'Post', params: { id: id } })
         this.getComments()
       }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async getProfileComments(id) {
+    try {
+      const res = await api.get('api/profile/comments')
+      AppState.userComments = res.data
     } catch (error) {
       console.error(error)
     }
