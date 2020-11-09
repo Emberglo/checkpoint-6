@@ -47,7 +47,7 @@ class PostService {
   async editPost(id, editPost) {
     try {
       await api.put('api/blogs/' + id, editPost)
-      router.push({ name: 'ActivePost', params: { id: editPost.id } })
+      // router.push({ name: 'ActivePost', params: { id: editPost.id } })
     } catch (error) {
       console.error(error)
     }
